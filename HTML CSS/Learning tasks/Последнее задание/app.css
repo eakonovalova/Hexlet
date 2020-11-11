@@ -2,20 +2,28 @@ body {
     margin: 0;
 
     /* BEGIN (write your solution here) */
-
-
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
     /* END */
 }
 
 /* BEGIN (write your solution here) */
-
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    font-size: 60px;
+}
 
 /* END */
 
 h2 {
     /* BEGIN (write your solution here) */
-
-
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    font-size: 25px;
     /* END */
 
     border-bottom: 2px solid #e3e3e3;
@@ -24,6 +32,10 @@ h2 {
 main {
     width: 900px;
     margin: auto;
+
+    padding-left: 50px;
+    margin-top: 50px;
+
 }
 
 /* BEGIN (write your solution here) */
