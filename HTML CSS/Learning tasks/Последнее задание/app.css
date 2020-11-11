@@ -3,18 +3,19 @@ body {
 
     /* BEGIN (write your solution here) */
     font-family: Helvetica;
+    color: #333;
     font-size: 18px;
     line-height: 1.5;
-    color: #333;
     /* END */
 }
 
 /* BEGIN (write your solution here) */
 h1 {
-    text-align: center;
-    margin-bottom: 10px;
     margin-top: 50px;
+    margin-bottom: 10px;
+
     font-size: 60px;
+    text-align: center;
 }
 
 /* END */
@@ -25,7 +26,7 @@ h2 {
     margin-bottom: 30px;
     margin-top: 0px;
     font-size: 25px;
-
+    padding-bottom: 30px;
     /* END */
 
     border-bottom: 2px solid #e3e3e3;
@@ -34,7 +35,6 @@ h2 {
 main {
     width: 900px;
     margin: auto;
-
     padding-left: 50px;
     margin-top: 50px;
 
@@ -42,9 +42,19 @@ main {
 
 /* BEGIN (write your solution here) */
 section {
-    padding-bottom: 0;
-    margin-top: 50px;
-    margin-left: 0;
-    padding-left: 50px;
+    margin: 50px 0;
+    padding: 0 50px;
+}
+
+section h2 {
+    padding: 0;
+
+    text-align: left;
+
+    border: none;
+}
+
+ul li {
+    margin-bottom: 10px;
 }
 /* END */
