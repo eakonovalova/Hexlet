@@ -2,6 +2,7 @@ body {
     margin: 0;
 
     /* BEGIN (write your solution here) */
+    font-family: Helvetica;
     font-size: 18px;
     line-height: 1.5;
     color: #333;
@@ -24,6 +25,7 @@ h2 {
     margin-bottom: 30px;
     margin-top: 0px;
     font-size: 25px;
+
     /* END */
 
     border-bottom: 2px solid #e3e3e3;
@@ -39,6 +41,10 @@ main {
 }
 
 /* BEGIN (write your solution here) */
-
-
+section {
+    padding-bottom: 0;
+    margin-top: 50px;
+    margin-left: 0;
+    padding-left: 50px;
+}
 /* END */
