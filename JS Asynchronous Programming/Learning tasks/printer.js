@@ -11,12 +11,12 @@
 /* eslint-disable no-console */
 // import fs from 'fs';
 //
-// // BEGIN (write your solution here) (write your solution here)
-// const cb = (_error, data) => console.log(data);
-//
-// const print = (path, a = 'utf-8') => {
-//     fs.readFile(path, 'utf-8', cb);
-// };
-//
-// export default print;
+// BEGIN (write your solution here) (write your solution here)
+const cb = (_error, data) => console.log(data);
+
+const print = (path, a = 'utf-8') => {
+    fs.readFile(path, 'utf-8', cb);
+};
+
+export default print;
 // END

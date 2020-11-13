@@ -15,6 +15,6 @@ import fs from 'fs';
 // BEGIN (write your solution here)
 const writer = (filepath, data, cb) => {
     fs.writeFile(filepath, data, cb);
-}
+};
 export default writer;
 // END

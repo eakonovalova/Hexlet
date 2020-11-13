@@ -37,7 +37,7 @@ export const getDirectorySize = (dir, cb) => {
                 cb(err2);
                 return;
             }
-            const fileSizes = filesData.filter((file) => file.isFile())
+            const fileSizes = filesData.filter((file) => file.isFile());
             const totalSize = _.sumBy(fileSizes, 'size');
             cb(null, totalSize);
         })
