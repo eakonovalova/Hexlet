@@ -40,7 +40,7 @@
 // Object.prototype.hasOwnProperty.call(obj, 'another key'); // false
 
 
-export default get (data, keys) => {
+export default get = (data, keys) => {
     let current = data;
     for (const key of keys) {
         const hasBarProperty = Object.prototype.hasOwnProperty.call(current, key);
