@@ -35,19 +35,8 @@ const makeDecartPoint = (x, y) => {
 };
 
 // BEGIN (write your solution here)
-const getX = (point) => {
-    const radius = point.radius;
-    const angle = point.angle;
-    const result = radius * Math.cos(angle);
-    return Math.round(result);
-};
+const getX = (point) => Math.round(getRadius(point) * Math.cos(getAngle(point)));
 
-const getY = (point) => {
-    const radius = point.radius;
-    const angle = point.angle;
-    const result = radius * Math.sin(angle);
-    return Math.round(result);
-};
-// END
+const getY = (point) => Math.round(getRadius(point) * Math.sin(getAngle(point)));
 
 export { makeDecartPoint, getX, getY };
