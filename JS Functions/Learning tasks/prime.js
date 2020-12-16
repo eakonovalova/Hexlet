@@ -13,6 +13,7 @@
 /* eslint-disable no-console */
 // BEGIN (write your solution here)
 const easyChek = (x) => {
+
     if (x === 2 || x === 3) {
         return true;
     }
@@ -20,7 +21,7 @@ const easyChek = (x) => {
         return false;
     }
 
-    for (let i = 2; i < x; i = i + 1) {
+    for (let i = 2; i < x; i += 1) {
         if (x % i === 0) {
             return false;
         }
@@ -28,14 +29,7 @@ const easyChek = (x) => {
     return true;
 };
 
-const prime = (x) => {
-    if (easyChek(x) === false) {
-        console.log('no');
-    }
-    if (easyChek(x) === true) {
-        console.log('yes');
-    }
-};
+const prime = (x) => (easyChek(x) === false) ? console.log('no') : console.log('yes');
 
 // END
 export default prime;
