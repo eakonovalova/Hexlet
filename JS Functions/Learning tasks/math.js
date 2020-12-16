@@ -17,11 +17,8 @@ const math = (...args) => {
     if (args.length === 0) {
         return null;
     }
-    const sum = _.sum(args);
-    if (sum === 0) {
-        return 0;
-    }
-    return sum / (args.length);
+
+    return _.sum(args) / (args.length);
 };
 // END
 export default math;
