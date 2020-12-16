@@ -17,21 +17,16 @@
 /* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
 
 // BEGIN (write your solution here)
-const convert = (data) => {
-    const date = new Date(...data);
-    return date.toDateString();
-};
-
 const solution = (...dates) => {
-    if (dates.length === 0) {
-        return [];
-    }
     const result = [];
     for (const data of dates) {
-        result.push(convert(data));
+        const date = new Date(...data);
+        date.toDateString();
+        result.push(date.toDateString());
     }
     return result;
 };
 
 // END
 export default solution;
+
