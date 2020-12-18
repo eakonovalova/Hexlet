@@ -17,7 +17,6 @@ const math = (...args) => {
     if (args.length === 0) {
         return null;
     }
-
     return _.sum(args) / (args.length);
 };
 // END
