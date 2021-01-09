@@ -55,21 +55,26 @@
 import { makeDecartPoint, getX, getY, getQuadrant } from './points.js';
 
 // BEGIN (write your solution here)
-const makeRectangle = (p, width, height) => ({ p, width, height });
 
-const getStartPoint = (rectangle) => rectangle.p;
-const getWidth = (rectangle) => rectangle.width;
-const getHeight = (rectangle) => rectangle.height;
-
-const containsOrigin = (rectangle) => {
-    const pointUpLeft = getStartPoint(rectangle);
-    const pointDownRight = makeDecartPoint(
-        getX(pointUpLeft) + getWidth(rectangle),
-        getY(pointUpLeft) - getHeight(rectangle)
-    );
-    return getQuadrant(pointUpLeft) === 2 && getQuadrant(pointDownRight) === 4;
+const makeRectangle = (point, width, height) => {
+    return { point, width, height };
 };
 
+const getWidth = (rectangle) => rectangle.width;
+const getHeight = (rectangle) => rectangle.height;
+const getStartPoint = (rectangle) => rectangle.point;
+const getPointDownRight = (rectangle) => {
+    const pointUpLeft = getStartPoint(rectangle);
+    const widthDiff = getX(pointUpLeft) + getWidth(rectangle);
+    const heightDiff = getY(pointUpLeft) - getHeight(rectangle);
+    return makeDecartPoint(widthDiff, heightDiff);
+};
+
+const containsOrigin = (rectangle) => {
+    const start = getStartPoint(rectangle);
+    const end = getPointDownRight(rectangle);
+    return getQuadrant(start) === 2 && getQuadrant(end) === 4;
+};
+// END
 export { makeRectangle, containsOrigin };
 export default makeRectangle;
-// END
