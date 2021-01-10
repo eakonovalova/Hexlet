@@ -25,44 +25,37 @@
 
 // @ts-check
 
-import getGcd from './utils.js';
+const getGcd = (a, b) => ((a % b) ? getGcd(b, a % b) : Math.abs(b));
 
 // BEGIN (write your solution here)
-const greatestDivisor = (a, b) => {
-    if (!b) return a;
-    return Math.abs(greatestDivisor(b, a % b));
+const makeRational = (a, b) => {
+    const commonDivisor = getGcd(a, b);
+    const number = a / commonDivisor;
+    const denom = b / commonDivisor;
+    return { number, denom };
 };
 
-const makeRational = (numer, denom) => {
-    const grDiv = greatestDivisor(numer, denom);
-    return { numer: numer / grDiv, denom: denom / grDiv };
+const getNumer = (rat) => rat.number;
+const getDenom = (rat) => rat.denom;
+
+const add = (rat1, rat2) => {
+    const rat1Number = getNumer(rat1) * getDenom(rat2);
+    const rat2Number = getNumer(rat2) * getDenom(rat1);
+    const ratsDenom = getDenom(rat1) * getDenom(rat2);
+    const numberSum = rat1Number + rat2Number;
+    return makeRational(numberSum, ratsDenom);
 };
 
-const getNumer = (numional) => numional.numer;
-const getDenom = (numional) => numional.denom;
-
-const add = (num1, num2) => {
-    const numer1 = getNumer(num1);
-    const numer2 = getNumer(num2);
-    const denom1 = getDenom(num1);
-    const denom2 = getDenom(num2);
-    let denom = denom1 * denom2;
-    let numer = numer1 * denom2 + numer2 * denom1;
-    return makeRational(numer, denom);
-};
-
-const sub = (num1, num2) => {
-    const numer1 = getNumer(num1);
-    const numer2 = getNumer(num2);
-    const denom1 = getDenom(num1);
-    const denom2 = getDenom(num2);
-    let denom = denom1 * denom2;
-    let numer = numer1 * denom2 - numer2 * denom1;
-    return makeRational(numer, denom);
+const sub = (rat1, rat2) => {
+    const rat1Number = getNumer(rat1) * getDenom(rat2);
+    const rat2Number = getNumer(rat2) * getDenom(rat1);
+    const ratsDenom = getDenom(rat1) * getDenom(rat2);
+    const numberSum = rat1Number - rat2Number;
+    return makeRational(numberSum, ratsDenom);
 };
 // END
 
-const numToString = (num) => `${getNumer(num)}/${getDenom(num)}`;
+const ratToString = (rat) => `${getNumer(rat)}/${getDenom(rat)}`;
 
 export {
     makeRational,
@@ -70,5 +63,5 @@ export {
     getDenom,
     add,
     sub,
-    numToString,
+    ratToString,
 };
