@@ -23,3 +23,11 @@ const bind = (obj, fn) => (...args) => fn.apply(obj, args);
 
 export default bind;
 // END
+
+
+//
+// const bind = function (context, fn) {
+//     return function (...args) { // упаковка входных данных в массив
+//         return fn.apply(context, args);
+//     };
+// };
