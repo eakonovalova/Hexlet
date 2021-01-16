@@ -17,11 +17,10 @@ import ParseError from './ParseError.js';
 // BEGIN (write your solution here)
 export const parseJson = (str) => {
     try {
-        JSON.parse(str);
+        return JSON.parse(str);
     } catch (e) {
         throw new ParseError(e);
     }
-    return JSON.parse(str);
 };
 
 // END
